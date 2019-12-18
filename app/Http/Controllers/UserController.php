@@ -13,7 +13,7 @@ class UserController extends Controller
      */
     public function index()
     {
-         $users = \App\User::paginate(10);
+         $users = \App\User::paginate(10)->where('status','ACTIVE');
          return view('users.index', ['users' => $users]);
     }
 
@@ -113,6 +113,8 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $user = \App\User::findOrFail($id);
+        $user->delete();
+        return redirect()->route('users.index')->with('status', 'User successfully deleted');
     }
 }
