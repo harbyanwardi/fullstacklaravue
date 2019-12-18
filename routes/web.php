@@ -21,3 +21,5 @@ Route::match(["GET", "POST"], "/register", function(){
 })->name("register"); //route jika link register diakses maka akan dilempar ke login
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::resource("users", "UserController");
