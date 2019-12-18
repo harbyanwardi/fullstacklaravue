@@ -27,6 +27,10 @@
 		 @endif
 		 </td>
 		 <td>
+		 <a
+		 href="{{route('users.show', ['id' => $user->id])}}"
+		 class="btn btn-primary btn-sm">Detail</a>
+ 
 		<a class="btn btn-info text-white btn-sm" href="{{route('users.edit',
 		['id'=>$user->id])}}">Edit</a>
 
