@@ -15,11 +15,24 @@ class UserController extends Controller
     {
 
         $filterKeyword = $request->get('keyword');
-       
+        $status = $request->get('status');
+
         if($filterKeyword){
-        
-            $users = \App\User::where('email', 'LIKE', "%$filterKeyword%")->get();
+            if($status){
+                 $users = \App\User::where('email', 'LIKE', "%$filterKeyword%")
+                        ->where('status', $status)
+                        ->paginate(10);
+            }
+            else{
+                $users = \App\User::where('email', 'LIKE', "%$filterKeyword%")
+                ->paginate(10);
+            }
+           
             
+        }
+        else if($status){
+            $users = \App\User::where('status', $status)
+                        ->paginate(10);
         }
         else{
             $users = \App\User::paginate(10);
@@ -61,7 +74,8 @@ class UserController extends Controller
          $file = $request->file('avatar')->store('avatars', 'public');
          $new_user->avatar = $file;
         }
-        $new_user->save();
+
+       
         return redirect()->route('users.create')->with('status', 'User successfully created.');
 
 

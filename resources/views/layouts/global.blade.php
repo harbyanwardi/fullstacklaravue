@@ -9,7 +9,7 @@
  <meta http-equiv="X-UA-Compatible" content="ie=edge">
  <title>Larashop @yield("title")</title>
  <link rel="stylesheet" href="{{asset('polished/polished.min.css')}}">
- <link rel="stylesheet" href="{{asset('polished/iconic/css/open-iconicbootstrap.min.css')}}">
+ <link rel="stylesheet" href="{{asset('polished/iconic/css/open-iconic-bootstrap.min.css')}}">
  <style>
  .grid-highlight {
  padding-top: 1rem;
@@ -67,6 +67,8 @@ id="navbar-dropdown" data-toggle="dropdown">
  <ul class="polished-sidebar-menu ml-0 pt-4 p-0 d-md-block">
  <input class="border-dark form-control d-block d-md-none mb-4" type="text" placeholder="Search" aria-label="Search" />
  <li><a href="/home"><span class="oi oi-home"></span> Home</a>
+ <li> <a href="{{route('users.index')}}"><span class="oi oi-people"></span> Manage Users </a></li>
+
 </li>
 
  <div class="d-block d-md-none">
