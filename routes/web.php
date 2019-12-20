@@ -23,7 +23,10 @@ Route::match(["GET", "POST"], "/register", function(){
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource("users", "UserController");
-Route::get('/categories/{id}/restore', 'CategoryController@restore')->name('categories.restore');
+Route::get('/categories/{id}/restore', 'CategoryController@restore')->name('categories.restore'); //route manual harus diatas route resource
+Route::get('/categories/trash', 'CategoryController@trash')->name('categories.trash');
 Route::resource('categories', 'CategoryController');
-Route::get('/cat/trash', 'CategoryController@trash')->name('categories.trash'); //route resource dengan manual harus dibedakan namanya
+Route::resource('books', 'BookController');
+Route::get('/ajax/categories/search', 'CategoryController@ajaxSearch');
+
 
