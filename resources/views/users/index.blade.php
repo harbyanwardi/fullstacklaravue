@@ -61,7 +61,10 @@
 		 <img src="{{asset('storage/'.$user->avatar)}}"
 		width="70px"/>
 		 @else
-		 <img src="http://127.0.0.1:8000/public/storage/avatars/no.jpg" width="70px"/>
+		<!-- <img src="http://127.0.0.1:8000/storage/avatars/no.jpg"
+		width="70px"/> -->
+		 <img src="{{asset('img/no.jpg')}}"
+		width="70px"/>
 		 @endif
 		 </td>
 		 <td>

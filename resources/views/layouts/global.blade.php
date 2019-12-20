@@ -68,6 +68,7 @@ id="navbar-dropdown" data-toggle="dropdown">
  <input class="border-dark form-control d-block d-md-none mb-4" type="text" placeholder="Search" aria-label="Search" />
  <li><a href="/home"><span class="oi oi-home"></span> Home</a>
  <li> <a href="{{route('users.index')}}"><span class="oi oi-people"></span> Manage Users </a></li>
+ <li> <a href="{{route('categories.index')}}"><span class="oi oi-people"></span> Manage Category </a></li>
 
 </li>
 
