@@ -3,6 +3,15 @@
 @section('content')
  <div class="row">
  <div class="col-md-12">
+ 	<div class="row mb-3">
+	 <div class="col-md-12 text-right">
+	 <a
+	 href="{{route('books.create')}}"
+	 class="btn btn-primary"
+	 >Create book</a>
+	 </div>
+	</div>
+
  <table class="table table-bordered table-stripped">
  <thead>
  <tr>
@@ -46,7 +55,10 @@ width="96px"/>
  <td>{{$book->stock}}</td>
  <td>{{$book->price}}</td>
  <td>
- [TODO: actions]
+<a
+ href="{{route('books.edit', ['id' => $book->id])}}"
+ class="btn btn-info btn-sm"> Edit </a>
+
  </td>
  </tr>
  @endforeach
