@@ -26,7 +26,12 @@ Route::resource("users", "UserController");
 Route::get('/categories/{id}/restore', 'CategoryController@restore')->name('categories.restore'); //route manual harus diatas route resource
 Route::get('/categories/trash', 'CategoryController@trash')->name('categories.trash');
 Route::resource('categories', 'CategoryController');
+
+Route::get('books/trash', 'BookController@trash')->name('books.trash');
+Route::get('/books/{id}/restore', 'BookController@restore')->name('books.restore');
 Route::resource('books', 'BookController');
 Route::get('/ajax/categories/search', 'CategoryController@ajaxSearch');
+
+Route::resource('order', 'OrderController');
 
 
